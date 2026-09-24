@@ -88,6 +88,19 @@ Astuce Navicat : l'onglet **Aggregate** permet aussi de construire un pipeline �
 
 📸 *Capture : 2 ou 3 requêtes avec leur résultat (ex. Q11, Q13, Q15).*
 
+## Étape 7 bis — Le pipeline d'agrégation (bilan qualité par quartier)
+
+Fichier : `requetes/pipeline.js`.
+
+1. Dans Navicat, clic sur `projet_nosql` → **Nouvelle requête**
+2. Ouvrir `requetes/pipeline.js`, **tout copier** et coller dans l'éditeur
+3. **Exécuter** (Ctrl + R)
+4. Résultat attendu : 5 lignes (une par quartier), Staten Island en premier avec 84,7 % de A — voir `requetes/resultats.md`, partie 5
+
+Pour montrer le pipeline **étape par étape** : ouvrir la collection `restaurants` → **Aggregate** (générateur d'agrégation) → ajouter les étapes une par une (`$match`, `$unwind`, `$match`, `$group`, `$project`, `$sort`) en collant le contenu de chaque étape depuis `pipeline.js`, et regarder l'aperçu changer.
+
+📸 *Capture : le pipeline et son résultat.*
+
 ## Étape 8 — Publier sur GitHub
 
 ### 8.1 Préparer

@@ -151,6 +151,21 @@ Q9 — 5 premiers résultats : May May Kitchen (Brooklyn, Chinese), Polish Natio
 - **Q19** : index composé `borough_1_cuisine_1` créé → index de la collection : `_id_`, `borough_1_cuisine_1`.
 - **Q20** : `updateMany` avec pipeline → 25 359 documents modifiés ; ex. *Morris Park Bake Shop* → `nb_inspections: 5`.
 
+## Partie 5 — Pipeline d'agrégation : bilan qualité par quartier
+
+Fichier : [`pipeline.js`](pipeline.js) — 6 étapes : `$match` → `$unwind` → `$match` → `$group` → `$project` → `$sort`.
+Seules les notes A, B et C sont comptées ; `nb_restaurants` = restaurants ayant au moins une de ces notes.
+
+| Quartier | Restaurants | Inspections | Score moyen | % de A | % de C |
+|---|---:|---:|---:|---:|---:|
+| Staten Island | 894 | 3 116 | 11,25 | 84,7 | 2,6 |
+| Bronx | 2 217 | 8 418 | 10,98 | 83,4 | 3,4 |
+| Manhattan | 9 760 | 37 466 | 11,25 | 83,2 | 3,5 |
+| Brooklyn | 5 716 | 21 190 | 11,35 | 81,8 | 3,8 |
+| Queens | 5 294 | 20 135 | 11,51 | 81,6 | 3,3 |
+
+→ **Staten Island** a la meilleure proportion de A, **Brooklyn** la plus forte proportion de C ; les écarts restent faibles (3 points).
+
 ## Conclusions
 
 1. **Manhattan concentre 40 %** des restaurants (10 259 sur 25 359).

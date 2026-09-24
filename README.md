@@ -20,6 +20,7 @@ projet-mongodb-navicat/
 │   └── restaurants.json  ← le dataset (JSON, 1 document par ligne)
 ├── requetes/
 │   ├── requetes.js       ← les 20 requêtes MongoDB commentées
+│   ├── pipeline.js       ← pipeline d'agrégation : bilan qualité par quartier
 │   └── resultats.md      ← les résultats obtenus + conclusions
 └── captures/             ← captures d'écran Navicat
 ```
@@ -38,6 +39,7 @@ projet-mongodb-navicat/
 | 2. Filtrage | Q5–Q10 | `find`, projection, `sort`, `limit`, `$in`, `$regex`, `$elemMatch` |
 | 3. Agrégation | Q11–Q18 | `$match`, `$group`, `$unwind`, `$sort`, `$limit`, `$avg`, `$sum`, `$first`, `$year` |
 | 4. Optimisation | Q19–Q20 | `createIndex`, `updateMany` avec pipeline, `$size` |
+| 5. Pipeline | `pipeline.js` | `$match`, `$unwind`, `$group`, `$addToSet`, `$cond`, `$project`, `$round`, `$sort` |
 
 Exécution : dans Navicat (*Nouvelle requête*) ou en ligne de commande :
 
